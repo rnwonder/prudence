@@ -33,7 +33,8 @@ https://limitless-temple-51492.herokuapp.com/api/id/reAuth/"id"
 
 
 ### Unlink account
-This removes our access to the user account details
+This removes our access to the user account details  
+
 https://limitless-temple-51492.herokuapp.com/api/unlink/"id"
 
 ### Get Statement
