@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userDetailsAction } from "../../redux/slice/userSlice";
@@ -18,6 +18,13 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
   const [error, seterror] = useState("");
   const [authState, setAuthState] = useState<"login" | "register">("register");
   const [loading, setLoading] = useState(false)
+  const id = localStorage.getItem("accountId");
+
+  useEffect(() => {
+    if (id) {
+      navigate("/connect");
+    }
+  }, [id, navigate]);
 
 
   const handleLogin = async(e: any) => {
@@ -25,12 +32,12 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
     setLoading(true)
 
     if(!email || !password) {
-        alert("Fill all fields")
+        seterror("Fill all fields")
         return
     }
 
     try {
-        const { data } = await Axios.post("/api/user/login", { email, password })
+        const { data } = await Axios.post("https://limitless-temple-51492.herokuapp.com/api/user/login", { email, password })
 
         console.log(data)
         dispatch(userDetailsAction(data))
@@ -48,18 +55,18 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
     setLoading(true)
 
     if(!firstname || !lastname || !email || !password) {
-        alert("Fill all fields")
+        seterror("Fill all fields")
         return
     }
 
     if(password !== conPass) {
-        alert("password dont match")
+        seterror("password dont match")
         return
     }
 
 
     try {
-        const { data } = await Axios.post("/api/user/register", { firstname, lastname, email, password })
+        const { data } = await Axios.post("https://limitless-temple-51492.herokuapp.com/api/user/register", { firstname, lastname, email, password })
 
         console.log(data)
         dispatch(userDetailsAction(data))
@@ -113,7 +120,7 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
               />
             </div>
 
-            <button disabled={loading} className="bg-primary text-light">Login</button>
+            <button disabled={loading} className=" text-light">Login</button>
           </form>
         )}
 
@@ -170,7 +177,7 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
               />
             </div>
 
-            <button disabled={loading} className="bg-primary text-light">Login</button>
+            <button disabled={loading} className=" text-light">Register</button>
           </form>
         )}
 

@@ -20,7 +20,7 @@ const AuthHeader: React.FunctionComponent<IAuthHeader> = ({}) => {
     const handleGetUserData =async ( id: string ) => {
         
         try {
-            const { data } = await Axios.get(`/api/user/get/${id}`)
+            const { data } = await Axios.get(`https://limitless-temple-51492.herokuapp.com/api/user/get/${id}`)
 
             console.log(data)
             dispatch(userDetailsAction(data))
@@ -34,13 +34,13 @@ const AuthHeader: React.FunctionComponent<IAuthHeader> = ({}) => {
     }
 
     useEffect(() => {
-        // if (!user.id) {
-        //     if(id) {
-        //         handleGetUserData(id)
-        //     } else {
-        //         navigate("/")
-        //     }
-        // }
+        if (!user.id) {
+            if(id) {
+                handleGetUserData(id)
+            } else {
+                navigate("/")
+            }
+        }
         
     }, [id, user.id])
     return (
