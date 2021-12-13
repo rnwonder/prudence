@@ -51,7 +51,7 @@
 
             .name {
                 display: flex; 
-                width: 100%;
+                width: 30rem;
                 justify-content: space-between;
 
                 .form-element {
@@ -102,6 +102,10 @@
 
                 button {
                     font-size: 0.875rem;
+                }
+
+                .name {
+                    width: 100%;
                 }
             }
 

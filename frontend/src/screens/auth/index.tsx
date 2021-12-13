@@ -1,12 +1,14 @@
 import Axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { userDetailsAction } from "../../redux/slice/userSlice";
 import "./styles.scss";
 
 export interface IAuth {}
 
 const Auth: React.FunctionComponent<IAuth> = ({}) => {
+    const navigate = useNavigate()
   const dispatch = useDispatch();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -32,6 +34,7 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
 
         console.log(data)
         dispatch(userDetailsAction(data))
+        navigate("/connect")
         setLoading(false)
     } catch (e: any) {
         console.log(e.response.data.message)
@@ -60,6 +63,7 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
 
         console.log(data)
         dispatch(userDetailsAction(data))
+        navigate("/connect")
         setLoading(false)
     } catch (e: any) {
         console.log(e.response.data.message)
