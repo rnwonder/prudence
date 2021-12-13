@@ -1,12 +1,15 @@
 import React from 'react'
 import "./styles.scss"
 import image from "../../assets/graphics/Group 62.png"
+import { useNavigate } from 'react-router-dom'
 
 export interface IBottomBanner {
     
 }
 
 const BottomBanner: React.FunctionComponent<IBottomBanner> = ({}) => {
+    const navigate = useNavigate()
+
     return (
         <section className="bottom-banner">
             <img className='banner-bg' src={image} alt="" />
@@ -20,7 +23,7 @@ const BottomBanner: React.FunctionComponent<IBottomBanner> = ({}) => {
                 sign up to start
                 </p>
 
-                <button className='bg-light'>Get Started</button>
+                <button className='bg-light' onClick={() => navigate("/auth")}>Get Started</button>
             </div>
       </section>
     )
