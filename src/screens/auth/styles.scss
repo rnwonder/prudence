@@ -1,0 +1,116 @@
+.auth {
+    
+
+    .container {
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .top {
+            margin: 0 0 4rem 0;
+            h1 {
+                font-size: 3rem;
+                font-weight: 800;   
+            }
+
+            p {
+
+            }
+        }
+
+        .error {
+            width: 80%;
+            margin: 0 0 2rem 0;
+            padding: 0.5em 0.8em;
+            border-radius: 23px;
+        }
+
+        
+
+        form {
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 2rem 0;
+            
+            .form-element {
+                width: 30rem;
+                margin: 0 0 2rem 0;
+
+                .form-input {
+                    border: 3px solid #5433FF;
+                    border-radius: 23px;
+                    padding: 1em 1.5em;
+                    width: 100%;
+
+                    
+                }
+            }
+
+            .name {
+                display: flex; 
+                width: 100%;
+                justify-content: space-between;
+
+                .form-element {
+                    &:first-child {
+                        margin: 0 1rem 0 0;
+                    }
+                }
+            }
+
+            button {
+                padding: 1em 1.5em;
+                width: 13rem;
+                border-radius: 23px;
+            }
+        }
+
+        .notice {
+            span {
+                cursor: pointer;
+            }
+        }
+
+
+        @media (max-width: 50em) {
+            .top {
+                margin: 0 0 4rem 0;
+                text-align: center;
+                h1 {
+                    font-size: 1.5rem;
+                }
+    
+                p {
+                    font-size: 0.875rem;
+                }
+            }
+            
+
+            form {
+                width: 100%;
+                max-width: 30em;
+                .form-element {
+                    width: 100%;
+
+                    .form-input {
+                        font-size: 0.875rem;
+                    }
+                }
+
+                button {
+                    font-size: 0.875rem;
+                }
+            }
+
+            
+
+            .notice {
+                font-size: 0.875rem;
+            }
+    
+        }
+    }
+}

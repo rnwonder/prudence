@@ -1,0 +1,51 @@
+.footer {
+    padding: 2rem 0 0 0;
+    .container {
+        justify-content: space-between;
+        .socials {
+            flex-direction: column;
+            svg {
+                margin: 0 0 1rem 0;
+                cursor: pointer;
+            }
+        }
+
+        ul {
+            flex-direction: column;
+            padding: 0;
+
+            li {
+                
+                &.title  {
+                    font-weight: 600;
+                    margin: 0 0 1rem 0;
+                }
+
+                .opt {
+                    color: rgb(255, 255, 255);
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                    margin: 0 0 0.75rem 0;
+                    display: block;
+                }
+            }     
+        }
+
+        @media (max-width: 50em) {
+            flex-direction: column;
+
+            .socials {
+                flex-direction: row;
+                margin: 0 0 2rem 0;
+
+                svg {
+                    margin: 0 1rem 0rem 0;
+                }
+            }
+
+            ul {
+                margin: 0 0 2rem 0;
+            }
+        }
+    }
+}

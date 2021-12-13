@@ -1,0 +1,119 @@
+.header {
+    font-family: 'Poppins', sans-serif;
+
+    .container {
+        align-items: center;
+        justify-content: space-between;
+        .left {
+
+            img {
+                max-height: 1.75rem;
+            }
+    
+            ul {
+                margin: 0 0 0 3rem;
+                padding: 0;
+
+                li {
+                    &:first-child {
+                        margin: 0 2rem 0 0;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #8A8D84;
+                        font-size: 1rem;
+                        font-weight: 600;
+
+                        &:hover {
+                            color: #5433FF;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .right {
+            button {
+                padding: 0.5em 1em;
+                font-weight: 600;
+                border-radius: 4px;
+            }
+        }
+        
+    }
+
+    @media (max-width: 50em) {
+        
+        .container {
+            .left {
+    
+                img {
+
+                    width: 6rem;
+                }
+        
+                ul {
+                    margin: 0 0 0 0.8rem;
+    
+                    li {
+                        &:first-child {
+                            margin: 0 0.8rem 0 0;
+                        }
+    
+                        a {
+                            font-size: 0.75rem;
+                        }
+    
+                    }
+                }
+            }
+    
+            .right {
+                button {
+                    font-size: 0.75rem;
+                }
+            }
+            
+        }
+    }
+
+    @media (max-width: 25em) {
+        
+        .container {
+            .left {
+    
+                img {
+
+                    width: 4.5rem;
+                }
+        
+                ul {
+                    margin: 0 0 0 0.5rem;
+    
+                    li {
+                        &:first-child {
+                            margin: 0 0.5rem 0 0;
+                        }
+    
+                        a {
+                            font-size: 0.5rem;
+                        }
+    
+                    }
+                }
+            }
+    
+            .right {
+                button {
+                    font-size: 0.5rem;
+                }
+            }
+            
+        }
+    }
+
+    
+}
+

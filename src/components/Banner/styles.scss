@@ -1,0 +1,69 @@
+.banner {
+    margin: 2rem 0 0 0;
+    position: relative;
+    min-height: 30rem;
+
+    .banner-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .b-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #5433FF;
+        opacity: 0.52;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 30rem;
+        z-index: 2;
+
+
+        h1 {
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+        }
+
+        p {
+            font-size: 0.875rem;
+            margin: 0 0 2rem 0;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-weight: 600;
+            border-radius: 4px;
+            width: fit-content;
+        }
+    }
+
+    @media (min-width: 50em) {
+        min-height: 38rem;
+
+        .container {
+            min-height: 38rem;
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
