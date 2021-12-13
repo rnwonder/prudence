@@ -39,7 +39,6 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
     try {
         const { data } = await Axios.post("https://limitless-temple-51492.herokuapp.com/api/user/login", { email, password })
 
-        console.log(data)
         dispatch(userDetailsAction(data))
         navigate("/connect")
         setLoading(false)
@@ -67,8 +66,7 @@ const Auth: React.FunctionComponent<IAuth> = ({}) => {
 
     try {
         const { data } = await Axios.post("https://limitless-temple-51492.herokuapp.com/api/user/register", { firstname, lastname, email, password })
-
-        console.log(data)
+        
         dispatch(userDetailsAction(data))
         navigate("/connect")
         setLoading(false)

@@ -19,11 +19,10 @@ const Connect = ({}) => {
 
   const monoConnect = React.useMemo(() => {
     const monoInstance = new MonoConnect({
-      onClose: () => console.log("Widget closed"),
-      onLoad: () => console.log("Widget loaded successfully"),
+      onClose: () => {},
+      onLoad: () => {},
       onSuccess: ({ code }) => {
         setCodeAuth(code);
-        console.log(`Linked successfully: ${code}`);
       },
       key: live,
     });
@@ -38,7 +37,6 @@ const Connect = ({}) => {
       const { data } = await Axios.get(
         `https://limitless-temple-51492.herokuapp.com/api/id/get?authCode=${code}&userId=${userId}`
       );
-      console.log(data);
       if (data.id) {
         setgotId(true);
       }
@@ -50,8 +48,6 @@ const Connect = ({}) => {
   const handleGetUserData = async (id) => {
     try {
       const { data } = await Axios.get(`https://limitless-temple-51492.herokuapp.com/api/user/get/${id}`);
-
-      console.log(data);
       dispatch(userDetailsAction(data));
     } catch (e) {
       console.log(e);
@@ -76,10 +72,7 @@ const Connect = ({}) => {
         }, 5000);
       }
      
-    }
-
-    console.log(user.id)
-    
+    }   
   }, [gotId, user.id]);
 
   return (
