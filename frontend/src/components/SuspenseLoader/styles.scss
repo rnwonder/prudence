@@ -73,21 +73,4 @@
         animation-delay: ($pulse-duration / 1.5);
       }
     }
-
-  .logo {
-    // animation: App-logo-spin infinite 3s linear;
-    position: absolute;
-    z-index: 60;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-  
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -6,7 +6,6 @@ const SuspenseLoader = () => {
     <div className="suspense_loader">
       <div className="loader">
         <div className="loading">
-        
         </div>
       </div>
     </div>

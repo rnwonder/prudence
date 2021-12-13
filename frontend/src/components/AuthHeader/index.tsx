@@ -22,7 +22,6 @@ const AuthHeader: React.FunctionComponent<IAuthHeader> = ({}) => {
         try {
             const { data } = await Axios.get(`https://limitless-temple-51492.herokuapp.com/api/user/get/${id}`)
 
-            console.log(data)
             dispatch(userDetailsAction(data))
         } catch (e: any) {
             console.log(e.response.data.message)
